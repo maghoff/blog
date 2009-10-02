@@ -33,7 +33,10 @@ def run(argv):
 			print
 	else:
 		# TODO: Find list of available commands
-		cmds = ['help']
+		cmds = [
+			'help',
+			'init',
+		]
 
 		print "Available commands:"
 		for c in cmds:
