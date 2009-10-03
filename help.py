@@ -36,6 +36,7 @@ def run(argv):
 		cmds = [
 			'help',
 			'init',
+			'publish',
 		]
 
 		print "Available commands:"

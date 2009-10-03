@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import core
+
 def main(argv):
 	script = argv[0]
 	argv = argv[1:]
@@ -15,7 +17,11 @@ def main(argv):
 		print "Command \"%s\" not found. Try:\n\t%s help\n" % (cmd_name, script)
 		return -1
 
-	return cmd.run(argv)
+	retval = cmd.run(argv)
+
+	core.write_configs()
+
+	return retval
 
 if __name__ == '__main__':
 	import sys
