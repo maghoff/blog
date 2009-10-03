@@ -39,11 +39,7 @@ def update(dry_run, bs, blog_id):
 
 	autolinks = generate_automatic_links(bloggerfeed)
 
-	cfg = core.project_config()
-	root = os.path.join(
-		os.path.split(core.project_config_file())[0], 
-		cfg.get('filesystem', 'path')
-	)
+	root = core.get_blog_directory()
 
 	diskfeed = get_disk_feed(root)
 

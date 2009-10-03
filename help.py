@@ -34,6 +34,7 @@ def run(argv):
 	else:
 		# TODO: Find list of available commands
 		cmds = [
+			'add',
 			'help',
 			'init',
 			'publish',

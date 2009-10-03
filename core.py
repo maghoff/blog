@@ -24,6 +24,13 @@ def find_config():
 
 project_config_file = find_config
 
+def get_blog_directory():
+	cfg = project_config()
+	return os.path.join(
+		os.path.split(project_config_file())[0], 
+		cfg.get('filesystem', 'path')
+	)
+
 def user_config_file():
 	return os.path.expanduser(USER_CONFIG_FILE)
 
