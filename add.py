@@ -31,6 +31,8 @@ def run(argv):
 
 	d = datetime.date.today()
 
+	editor = os.environ["EDITOR"]
+
 	title = "Temp"
 	fn_pattern = "%02i-%04i-%02i-%02i-%s.md"
 	o_fn = fn_pattern % (no, d.year, d.month, d.day, title)
@@ -40,7 +42,7 @@ def run(argv):
 	f.write("Title\n=====\n\n")
 	f.close()
 
-	subprocess.check_call([os.environ["EDITOR"], o_fn])
+	subprocess.check_call([editor, o_fn])
 
 	f = open(o_fn, 'rb')
 	title = f.readline().strip().replace(' ', '-')
