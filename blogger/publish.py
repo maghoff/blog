@@ -7,12 +7,12 @@ import gdata, atom
 def CreatePublicPost(blogger_service, blog_id, title, content):
 	entry = gdata.GDataEntry()
 	entry.title = atom.Title('xhtml', title)
-	entry.content = atom.Content(content_type='html', text=content)
+	entry.content = atom.Content(content_type='text/html', text=content)
 	return blogger_service.Post(entry, '/feeds/%s/posts/default' % blog_id)
 
 def UpdatePublicPost(blogger_service, blog_id, entry, title, content):
 	entry.title = atom.Title('xhtml', title)
-	entry.content = atom.Content(content_type='html', text=content)
+	entry.content = atom.Content(content_type='text/html', text=content)
 	return blogger_service.Put(entry, entry.GetEditLink().href)
 
 def add(info, title, doc):

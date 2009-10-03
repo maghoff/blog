@@ -38,7 +38,7 @@ def prepare(root, f, autolinks):
 		for h in hs:
 			h.tagName = trg
 
-	return (title, doc.toxml('utf8').replace('\n', ' '))
+	return (title, doc.toxml('utf8'))
 
 def main(argv):
 	title, doc = prepare("../02-2009-08-22-GL_PROJECTION-abuse.md", "")
