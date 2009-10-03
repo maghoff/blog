@@ -8,7 +8,7 @@ I have come to realize that [in order to think properly, I need to write][essay]
 <div style="
     border-style: solid;
     border-width: 1px;
-    margin: 1ex;
+    padding: 1ex;
 ">This project will provide a command line tool to aid in writing and publishing a blog as part of a programming project.</div>
 
 
