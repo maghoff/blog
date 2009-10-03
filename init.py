@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import optparse, ConfigParser
+import optparse, ConfigParser, os
 import core
 
 usage = "init"
@@ -31,11 +31,19 @@ def run(argv):
 		return -1
 
 	cfg = ConfigParser.RawConfigParser()
-	cfg.add_section('Filesystem')
-	cfg.set('Filesystem', 'path', 'blog/')
+	cfg.add_section('filesystem')
+	cfg.set('filesystem', 'path', 'blog/')
 	f = open('.blog', 'wb')
 	cfg.write(f)
 	f.close()
+
+	try:
+		os.mkdir('blog')
+	except OSError:
+		pass
+
+	if not os.path.isfile('blog/links.md'):
+		open('blog/links.md', 'wb').close()
 
 	print "Now use \"blog add\" to add a blog entry!"
 

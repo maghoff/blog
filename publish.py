@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import optparse
-import core, blogger, blogger.list
+import core, blogger, blogger.update
 
 usage = "publish [--write]"
 desc = "Publish to your blogger.com-blog"
@@ -27,7 +27,14 @@ def run(argv):
 	(options, args) = p.parse_args(argv)
 
 	bs = blogger.get_blogger_service()
-	blogger.list.printit(bs)
+	blog_id = blogger.get_blog_id(bs)
+
+	blogger.update.update(
+		dry_run = not options.write,
+		bs = bs,
+		blog_id = blog_id,
+		
+	)
 
 	return 0
 

@@ -34,6 +34,15 @@ def user_config():
 		user_config_parser.read(user_config_file())
 	return user_config_parser
 
+def project_config():
+	global project_config_parser
+	if project_config_parser == None:
+		fn = find_config()
+		if fn == None: raise "Run init"
+		project_config_parser = ConfigParser.RawConfigParser()
+		project_config_parser.read(fn)
+	return project_config_parser
+
 def acquire_user_setting(section, field, desc):
 	cfg = user_config()
 
@@ -51,12 +60,10 @@ def write_configs():
 	if project_config_parser != None:
 		fn = project_config_file()
 		project_config_parser.write(open(fn, 'wb'))
-		print "Wrote config to %s" % fn
 
 	if user_config_parser != None:
 		fn = user_config_file()
 		user_config_parser.write(open(fn, 'wb'))
-		print "Wrote config to %s" % fn
 
 
 
