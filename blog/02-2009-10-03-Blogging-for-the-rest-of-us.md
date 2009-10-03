@@ -10,3 +10,9 @@ Source
 ------
 
 The source code, and therefore the entire project, is not publicly available yet, due to a rather large outage of [bitbucket](http://bitbucket.org). Bitbucket places the blame with Amazon. The best source for news on this is unfortunately [twitter](http://twitter.com/search?q=%23bitbucket).
+
+
+Completeness
+------------
+
+Since you can't see the project, you can't evaluate it. For now, I can at least assure you that this blog is being written in markdown and published with this tool. It works!
