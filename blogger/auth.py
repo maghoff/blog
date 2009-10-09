@@ -10,7 +10,7 @@ def auth():
 
 	user = core.acquire_user_setting(
 		SEC, 'user',
-		'Blogger.com (Google) ID, including @server'
+		'Blogger.com (Google) ID'
 	)
 
 	passwd = getpass.getpass("Password for %s: " % user)

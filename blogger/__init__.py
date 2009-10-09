@@ -48,7 +48,8 @@ def get_blog_id(bs):
 			entry = feed.entry[c]
 			blog_id = entry.GetSelfLink().href.split("/")[-1]
 
-	cfg.add_section(SECTION)
+	if not cfg.has_section(SECTION):
+		cfg.add_section(SECTION)
 	cfg.set(SECTION, 'blog_id', blog_id)
 	
 	return blog_id
