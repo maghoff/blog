@@ -9,6 +9,9 @@ desc = "Add a blog entry"
 longhelp = """
 This command will create a new file in the blog-directory and
 open it for editing.
+
+If the EDITOR environmental variable is set, that editor will be
+used. Otherwise, 'sensible-editor' will be invoked.
 """
 
 def get_latest_entry_no(root):
@@ -31,7 +34,7 @@ def run(argv):
 
 	d = datetime.date.today()
 
-	editor = os.environ["EDITOR"]
+	editor = core.get_editor()
 
 	title = "Temp"
 	fn_pattern = "%02i-%04i-%02i-%02i-%s.md"

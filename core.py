@@ -72,7 +72,10 @@ def write_configs():
 		fn = user_config_file()
 		user_config_parser.write(open(fn, 'wb'))
 
-
+def get_editor():
+	if os.environ.has_key("EDITOR"):
+		return os.environ["EDITOR"]
+	return "sensible-editor"
 
 def ask(query):
 	# Pluggable UI would be neat
