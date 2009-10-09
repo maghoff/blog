@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import gdata, gdata.service, atom
+import gdata, gdata.service, atom, getpass
 import core
 
 
@@ -13,7 +13,7 @@ def auth():
 		'Blogger.com (Google) ID, including @server'
 	)
 
-	passwd = core.ask("Password for %s (WARNING! Password will be echoed in plain text. Patches will be accepted.)" % user)
+	passwd = getpass.getpass("Password for %s: " % user)
 
 	bs = gdata.service.GDataService(user, passwd)
 	bs.source = 'duck-bloggerintegration-1.0'
