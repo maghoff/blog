@@ -10,10 +10,10 @@ def auth():
 
 	user = core.acquire_user_setting(
 		SEC, 'user',
-		'Blogger.com (Google) ID'
+		'Google ID'
 	)
 
-	passwd = getpass.getpass("Password for %s: " % user)
+	passwd = getpass.getpass("Password for Google ID \"%s\": " % user)
 
 	bs = gdata.service.GDataService(user, passwd)
 	bs.source = 'duck-bloggerintegration-1.0'

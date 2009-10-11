@@ -36,7 +36,6 @@ def get_blog_id(bs):
 	while blog_id == None:
 		for entry, i in zip(feed.entry, itertools.count()):
 			print " [%i] %s" % (i, entry.title.text)
-		print " [n]: Create a new blog (not implemented)"
 
 		c = None
 		try:
